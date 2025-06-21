@@ -1,0 +1,7 @@
+{
+  "name": "github-oidc",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "subject": "repo:Olamiwale/wepay:ref:refs/heads/main",
+  "description": "GitHub Actions OIDC federated credential",
+  "audiences": ["api://AzureADTokenExchange"]
+}
