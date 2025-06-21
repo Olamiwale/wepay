@@ -8,6 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        service:
+          - account-service
+          - auth-service
+          - transaction-service
+
     steps:
     
     - name: Checkout repo
@@ -20,33 +27,12 @@ jobs:
 
         
     - name: Install dependencies
-      working-directory: ./backend/account-service
       run: npm ci
+      working-directory: ./app/${{ matrix.service }}
 
-
-    - name: Install dependencies
-      working-directory: ./backend/auth-service
-      run: npm ci
-
-
-    - name: Install dependencies
-      working-directory: ./backend/transaction-service
-      run: npm ci
-
-
-    - name: Run test
-      working-directory: ./backend/account-service
+    - name: Run tests
       run: npm test
-
-
-    - name: Run test
-      working-directory: ./backend/auth-service
-      run: npm test
-
-
-    - name: Run test
-      working-directory: ./backend/transaction-service
-      run: npm test
+      working-directory: ./app/${{ matrix.service }}
 
 
 
