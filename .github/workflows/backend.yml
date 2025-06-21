@@ -1,3 +1,52 @@
 name: Backend Pipeline
 
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+        
+    - name: Install dependencies
+      working-directory: ./backend/account-service
+      run: npm ci
+
+
+    - name: Install dependencies
+      working-directory: ./backend/auth-service
+      run: npm ci
+
+
+    - name: Install dependencies
+      working-directory: ./backend/transaction-service
+      run: npm ci
+
+
+    - name: Run test
+      working-directory: ./backend/account-service
+      run: npm test
+
+
+    - name: Run test
+      working-directory: ./backend/auth-service
+      run: npm test
+
+
+    - name: Run test
+      working-directory: ./backend/transaction-service
+      run: npm test
+
+
 
