@@ -77,3 +77,4 @@ jobs:
     - name: Deploy to AKS
       run: |
           kubectl apply -f ./backend/${{ matrix.service }}/k8s/dev/deployment.yaml
+          kubectl apply -f ./backend/${{ matrix.service }}/k8s/dev/service.yaml
