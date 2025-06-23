@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: briitzacr.azurecr.io/app:prod
+          image: wepayacr.azurecr.io/app:prod
           ports:
             - containerPort: 3001
           resources:
