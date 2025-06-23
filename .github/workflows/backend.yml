@@ -21,9 +21,9 @@ jobs:
           - transaction-service
 
     env:
-      REGISTRY: depaulacr.azurecr.io
-      RESOURCE_GROUP: depaul
-      CLUSTER_NAME: depaulaks
+      REGISTRY: wepayacr.azurecr.io
+      RESOURCE_GROUP: wepay_resource_group
+      CLUSTER_NAME: wepay-aks
 
     steps:
     
