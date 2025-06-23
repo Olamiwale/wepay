@@ -40,7 +40,7 @@ jobs:
 
 
     - name: ACR login via Azure CLI (OIDC)
-      run: az acr login --name depaulac
+      run: az acr login --name wepayacr
 
 
     - name: Set AKS Context
