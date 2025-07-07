@@ -21,9 +21,9 @@ jobs:
           - transaction-service
 
     env:
-      REGISTRY: wepayacr.azurecr.io
-      RESOURCE_GROUP: wepay_resource_group
-      CLUSTER_NAME: wepay-aks
+      REGISTRY: depaulacr.azurecr.io
+      RESOURCE_GROUP: de_paul_RG
+      CLUSTER_NAME: depaulaks
 
     steps:
     
@@ -40,7 +40,7 @@ jobs:
 
 
     - name: ACR login via Azure CLI (OIDC)
-      run: az acr login --name wepayacr
+      run: az acr login --name depaulacr
 
 
     - name: Set AKS Context
