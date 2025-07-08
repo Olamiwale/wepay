@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: wepayacr.azurecr.io/backend:staging
+          image: depaulacr.azurecr.io/backend:staging
           ports:
             - containerPort: 3000
           resources:
